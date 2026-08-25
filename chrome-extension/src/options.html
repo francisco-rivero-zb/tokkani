@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tokkani Options</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <h1>Tokkani</h1>
+      <label>
+        ESP32 IP
+        <input id="deviceIp" inputmode="numeric" placeholder="192.168.1.50">
+      </label>
+      <label>
+        Device key
+        <input id="deviceKey" type="password" placeholder="same key as firmware">
+      </label>
+      <label class="check">
+        <input id="autoPost" type="checkbox">
+        Sync automatically
+      </label>
+      <button id="save">Save</button>
+      <p id="status"></p>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

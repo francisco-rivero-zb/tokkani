@@ -1,0 +1,110 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+  background: #e95f1d;
+  color: #fffaf4;
+}
+
+main {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #ffe0c8;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 6px;
+  padding: 9px 10px;
+  font: inherit;
+  background: rgba(86, 32, 0, 0.18);
+  color: #fffaf4;
+}
+
+.check {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.check input {
+  width: auto;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font: inherit;
+  font-weight: 650;
+  background: #fffaf4;
+  color: #5b2100;
+}
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(86, 32, 0, 0.18);
+  color: #fffaf4;
+}
+
+.setup,
+.actions {
+  display: grid;
+  gap: 10px;
+}
+
+.actions {
+  grid-template-columns: 1fr 1fr;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.gauge-row strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.gauge-row span:first-of-type {
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.gauge-row span:last-of-type {
+  color: #ffe0c8;
+  font-size: 12px;
+}
+
+a {
+  color: #fffaf4;
+}
+
+#status,
+#lastPost {
+  min-height: 18px;
+  margin: 0;
+  color: #ffe0c8;
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tokkani</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="popup">
+    <main>
+      <h1>Tokkani</h1>
+      <section class="setup">
+        <label>
+          ESP32 IP
+          <input id="deviceIp" inputmode="numeric" placeholder="192.168.1.50">
+        </label>
+        <label>
+          Device key
+          <input id="deviceKey" type="password" placeholder="same key as setup portal">
+        </label>
+        <label class="check">
+          <input id="autoPost" type="checkbox">
+          Sync while usage pages are open
+        </label>
+        <div class="actions">
+          <button id="save">Save</button>
+          <button id="sync" class="secondary">Sync</button>
+        </div>
+      </section>
+      <section id="readings"></section>
+      <p id="lastPost"></p>
+      <section class="actions">
+        <button id="openClaude" class="secondary">Open Claude usage</button>
+        <button id="openCodex" class="secondary">Open Codex analytics</button>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
