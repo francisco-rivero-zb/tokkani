@@ -218,6 +218,49 @@ Chrome's unpacked-extension workflow is documented in Google's [extension develo
 
 To check that the device is reachable, open `http://<device-ip>/status` in a browser on the same Wi-Fi network.
 
+## Touch controls and settings menu
+
+Tokkani uses one capacitive touch button on **GPIO1** by default. Its behavior changes with the current screen, so the same button can control the display without accidental resets.
+
+### At a glance
+
+| Current screen | Short tap | Press and hold |
+| --- | --- | --- |
+| Normal display | Turn the backlight on or off | Hold for **3 seconds** to open **Settings** |
+| Settings | Move to the next item | Hold for **1 second** to select the highlighted item |
+| Eye color editing | Toggle between white and black eyes | Hold for **1 second** to save and return to Settings |
+| Reset confirmation | Toggle between **No** and **Yes** | Confirm the selected choice |
+
+The backlight also turns off automatically after **60 seconds** of inactivity. A short tap turns it back on.
+
+### Menu flow
+
+```text
+Normal display
+  |-- short tap ------------------> Toggle backlight
+  '-- hold 3 seconds -------------> Settings
+                                      |-- short tap --> Eye color -> Reset all -> Exit
+                                      '-- hold 1 second
+                                            |-- Eye color --> Edit color
+                                            |-- Reset all --> No / Yes confirmation
+                                            '-- Exit -------> Normal display
+```
+
+### Factory reset
+
+Factory reset is deliberately a multi-step action:
+
+1. Open **Settings** by holding the touch button for 3 seconds.
+2. Use short taps to select **Reset all**.
+3. Hold for 1 second, then choose **Yes** with a short tap.
+4. Hold for 1 second to continue.
+5. Release the button once when prompted, then touch and hold it again for **5 seconds**.
+
+Releasing the button during the 5-second countdown cancels the reset. A completed reset erases saved Wi-Fi credentials, the device key, and menu preferences, then restarts the device.
+
+> [!TIP]
+> The timing and touch pin are configurable in [`firmware/include/config.h`](firmware/include/config.h): `TOUCH_SENSOR_PIN`, `MENU_OPEN_PRESS_MS`, `MENU_SELECT_PRESS_MS`, and `FACTORY_RESET_CONFIRM_MS`.
+
 ## Troubleshooting
 
 | Problem | What to check |
